@@ -1,25 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Book from './Components/Book/Book';
+import React from 'react';
+import { GenreNameContex, GenreNameContexProvider } from './MyContex/GenreNameContex/GenreNameContex';//import the file that create contex object and function component  that return provider with props that represent the component that start the hierarchy.
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //for declaring the path for the context object we 
+    //על מנת להגדיר על התחלת ההיררכיה שבה יועבר הקונטקס אנו תוחמים תוחמים בעזרת הקונטקסט ומגדירים עליו כ Provider  
+    //ונותנים לו ערך 
+    <GenreNameContexProvider div = {<Book/>}>
+      
+    </GenreNameContexProvider>
+     
+      /* <div className="App">
+        <header className="App-header">
+          <Book bookName="Naruto" />
+        </header>
+      </div> */
+    
+
   );
+
 }
 
 export default App;
